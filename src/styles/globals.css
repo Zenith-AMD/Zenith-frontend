@@ -1,0 +1,85 @@
+:root {
+  --bg: #050505;
+  --accent: #7c3aed;
+  --accent-secondary: #a855f7;
+  --neon-glow: #c084fc;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --glass-surface: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glow-color: rgba(124, 58, 237, 0.4);
+}
+
+[data-theme="light"] {
+  --bg: #f8fafc;
+  --accent: #06b6d4;
+  --accent-secondary: #0ea5e9;
+  --neon-glow: #22d3ee;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --glass-surface: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(6, 182, 212, 0.2);
+  --glow-color: rgba(6, 182, 212, 0.4);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+  transition: background 0.4s ease, color 0.3s ease;
+}
+
+/* Dark mode wallpaper */
+[data-theme="dark"] body {
+  background-image: url('/wallpaper.png');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: #050505;
+}
+
+/* Light mode — no wallpaper, solid background */
+[data-theme="light"] body {
+  background-image: none;
+  background-color: var(--bg);
+}
+
+.glass {
+  background: var(--glass-surface);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+}
+
+[data-theme="dark"] .glass {
+  background: rgba(5, 5, 5, 0.35);
+  backdrop-filter: blur(20px) saturate(200%);
+  -webkit-backdrop-filter: blur(20px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+[data-theme="light"] .glass {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid rgba(6, 182, 212, 0.18);
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 99px; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}

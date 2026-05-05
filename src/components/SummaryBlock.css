@@ -1,0 +1,32 @@
+.summary-block {
+  position: relative;
+  overflow: hidden;
+  animation: fadeSlideIn 0.5s ease backwards;
+  display: flex;
+}
+
+.summary-accent-bar {
+  width: 4px;
+  background: linear-gradient(to bottom, var(--accent), var(--accent-secondary));
+  flex-shrink: 0;
+}
+
+.summary-content {
+  padding: 20px 24px;
+  flex: 1;
+}
+
+.summary-label {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.summary-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+}

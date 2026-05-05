@@ -1,0 +1,41 @@
+.risky-clause-card {
+  border-left: 4px solid var(--accent);
+  padding: 20px;
+  animation: fadeSlideIn 0.5s ease backwards;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.clause-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.risk-badge {
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 99px;
+  letter-spacing: 0.5px;
+}
+
+.clause-text {
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  background: var(--glass-surface);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.clause-explanation {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}

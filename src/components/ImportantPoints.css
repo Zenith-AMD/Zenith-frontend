@@ -1,0 +1,35 @@
+.important-points-section {
+  animation: fadeSlideIn 0.5s ease backwards;
+  animation-delay: 150ms;
+}
+
+.points-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.point-item {
+  display: flex;
+  padding: 16px 20px;
+  gap: 12px;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.point-item:last-child {
+  border-bottom: none;
+}
+
+.point-bullet {
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.point-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}

@@ -1,0 +1,58 @@
+.country-selector-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.country-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-left: 4px;
+}
+
+.select-wrapper {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.country-select {
+  width: 100%;
+  appearance: none;
+  background: transparent;
+  border: none;
+  padding: 14px 40px 14px 16px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  outline: none;
+}
+
+.country-select option {
+  background: var(--bg);
+  color: var(--text-primary);
+}
+
+.select-arrow {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0; 
+  height: 0; 
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid var(--accent);
+  pointer-events: none;
+}
+
+.select-wrapper:focus-within {
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 10px var(--glow-color);
+}
