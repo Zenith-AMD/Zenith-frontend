@@ -11,13 +11,15 @@ const ResultsPanel = ({ result }) => {
     <div className="results-panel glass">
       <h2 className="results-title">Analysis Complete</h2>
       
-      <SummaryBlock summary={result.summary} />
+      {(result.overall_summary || result.summary) && (
+        <SummaryBlock summary={result.overall_summary || result.summary} />
+      )}
       
-      {result.important_points && result.important_points.length > 0 && (
+      {result.important_points && Array.isArray(result.important_points) && result.important_points.length > 0 && (
         <ImportantPoints points={result.important_points} />
       )}
       
-      {result.risky_clauses && result.risky_clauses.length > 0 && (
+      {result.risky_clauses && Array.isArray(result.risky_clauses) && result.risky_clauses.length > 0 && (
         <div className="risky-section">
           <h3 className="section-heading">⚠️ Risky Clauses</h3>
           <div className="risky-cards-container">

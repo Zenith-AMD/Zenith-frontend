@@ -1,5 +1,11 @@
 .risky-clause-card {
-  border-left: 4px solid var(--accent);
+  background: var(--bg-tint, rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 0 20px color-mix(in srgb, var(--glow-color) 15%, transparent);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   padding: 20px;
   animation: fadeSlideIn 0.5s ease backwards;
   display: flex;
@@ -9,29 +15,36 @@
   overflow: hidden;
 }
 
+.risky-clause-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 32px color-mix(in srgb, var(--glow-color) 35%, transparent);
+}
+
 .clause-header {
   display: flex;
   justify-content: flex-end;
 }
 
 .risk-badge {
-  color: white;
   font-size: 0.75rem;
   font-weight: 700;
-  padding: 4px 10px;
+  padding: 4px 12px;
   border-radius: 99px;
   letter-spacing: 0.5px;
+  text-transform: uppercase;
+  backdrop-filter: blur(4px);
 }
 
 .clause-text {
   font-family: monospace;
   font-size: 0.9rem;
   color: var(--text-secondary);
-  background: var(--glass-surface);
+  background: rgba(0, 0, 0, 0.2);
   padding: 12px;
   border-radius: 8px;
   margin-bottom: 12px;
   line-height: 1.5;
+  font-style: italic;
 }
 
 .clause-explanation {

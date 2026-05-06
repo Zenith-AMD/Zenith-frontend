@@ -3,33 +3,41 @@
   animation-delay: 150ms;
 }
 
-.points-list {
-  list-style: none;
-  padding: 0;
+.important-cards-container {
   display: flex;
   flex-direction: column;
+  gap: 16px;
 }
 
-.point-item {
+.important-point-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 0 20px color-mix(in srgb, var(--accent) 15%, transparent);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 20px;
   display: flex;
-  padding: 16px 20px;
-  gap: 12px;
-  border-bottom: 1px solid var(--glass-border);
+  flex-direction: column;
+  gap: 8px;
+  animation: fadeSlideIn 0.5s ease backwards;
 }
 
-.point-item:last-child {
-  border-bottom: none;
-}
-
-.point-bullet {
-  color: var(--accent);
-  font-weight: bold;
-  font-size: 1.2rem;
-  line-height: 1.2;
+.important-point-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 32px color-mix(in srgb, var(--accent) 35%, transparent);
 }
 
 .point-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.point-summary {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: var(--text-primary);
+  color: var(--text-secondary);
 }
