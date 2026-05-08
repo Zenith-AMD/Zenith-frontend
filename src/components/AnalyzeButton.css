@@ -82,3 +82,19 @@
   cursor: not-allowed;
   transform: none;
 }
+
+[data-theme="light"] .analyze-button .inner-bg {
+  background: rgba(0, 200, 255, 0.15);
+  border: 1px solid rgba(0, 200, 255, 0.5);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+[data-theme="light"] .analyze-button {
+  color: #003d5c;
+  text-shadow: none;
+}
+
+[data-theme="light"] .analyze-button:hover:not(.disabled) .inner-bg {
+  background: rgba(0, 200, 255, 0.25);
+}

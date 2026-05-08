@@ -15,8 +15,16 @@
   background: rgba(255, 255, 255, 0.08);
 }
 
+[data-theme="light"] .file-upload {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px dashed rgba(0, 200, 255, 0.4);
+  backdrop-filter: blur(12px);
+}
+
 [data-theme="light"] .file-upload:hover {
-  background: rgba(6, 182, 212, 0.05);
+  background: rgba(0, 210, 255, 0.08);
+  border-color: rgba(0, 200, 255, 0.75);
+  box-shadow: 0 0 24px rgba(0, 200, 255, 0.2);
 }
 
 .file-upload.drag-over {
@@ -26,7 +34,9 @@
 }
 
 [data-theme="light"] .file-upload.drag-over {
-  background: rgba(6, 182, 212, 0.1);
+  background: rgba(0, 210, 255, 0.08);
+  border-color: rgba(0, 200, 255, 0.75);
+  box-shadow: 0 0 24px rgba(0, 200, 255, 0.2);
 }
 
 .upload-placeholder {

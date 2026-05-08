@@ -14,12 +14,12 @@
   --bg: #f8fafc;
   --accent: #06b6d4;
   --accent-secondary: #0ea5e9;
-  --neon-glow: #22d3ee;
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --glass-surface: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(6, 182, 212, 0.2);
-  --glow-color: rgba(6, 182, 212, 0.4);
+  --neon-glow: rgba(0, 210, 255, 0.6);
+  --text-primary: #0a1628;
+  --text-secondary: #1e3a5f;
+  --glass-surface: rgba(255, 255, 255, 0.22);
+  --glass-border: rgba(0, 200, 255, 0.35);
+  --glow-color: rgba(0, 210, 255, 0.6);
 }
 
 *, *::before, *::after {
@@ -46,10 +46,18 @@ body {
   background-color: #050505;
 }
 
-/* Light mode — no wallpaper, solid background */
+/* Light mode wallpaper */
 [data-theme="light"] body {
-  background-image: none;
+  background-image: url('/wallpaperw.png');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   background-color: var(--bg);
+}
+
+[data-theme="light"] h1, [data-theme="light"] h2, [data-theme="light"] h3, [data-theme="light"] h4, [data-theme="light"] h5, [data-theme="light"] h6 {
+  text-shadow: 0 1px 3px rgba(255,255,255,0.6);
 }
 
 .glass {
@@ -68,11 +76,25 @@ body {
 }
 
 [data-theme="light"] .glass {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  border: 1px solid rgba(6, 182, 212, 0.18);
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 200, 255, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
 }
+
+[data-theme="light"] .glass:hover {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 28px rgba(0, 210, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+[data-theme="light"] .risk-card.critical, [data-theme="light"] .risky-clause-card.risk-critical, [data-theme="light"] .risky-clause-card.risk-fraud { border-color: rgba(220, 30, 30, 0.5);  box-shadow: 0 0 20px rgba(220, 30, 30, 0.2); }
+[data-theme="light"] .risk-card.high, [data-theme="light"] .risky-clause-card.risk-high      { border-color: rgba(230, 100, 20, 0.5); box-shadow: 0 0 20px rgba(230, 100, 20, 0.2); }
+[data-theme="light"] .risk-card.medium, [data-theme="light"] .risky-clause-card.risk-medium    { border-color: rgba(200, 160, 0, 0.5);  box-shadow: 0 0 20px rgba(200, 160, 0, 0.2); }
+[data-theme="light"] .risk-card.low, [data-theme="light"] .risky-clause-card.risk-low       { border-color: rgba(20, 180, 80, 0.5);  box-shadow: 0 0 20px rgba(20, 180, 80, 0.2); }
 
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
