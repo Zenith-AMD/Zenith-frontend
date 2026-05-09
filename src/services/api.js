@@ -1,4 +1,4 @@
-const apiAddress = "http://localhost:8080";
+const apiAddress = "https://api.zerith.abeer.lol";
 
 export async function analyzeContract({ text, file, country }) {
   const formData = new FormData();
