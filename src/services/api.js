@@ -1,4 +1,4 @@
-const apiAddress = "https://api.zerith.abeer.lol";
+const apiAddress = "https://api.abeer.lol";
 
 export async function analyzeContract({ text, file, country }) {
   const formData = new FormData();
